@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dab508f8-d58c-43f0-83b9-54b4c5f7f837" name="Default Changelist" comment="" />
+    <list default="true" id="dab508f8-d58c-43f0-83b9-54b4c5f7f837" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/b3c7783d-2908-4ecd-936d-36458090ce0d.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Olga.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/meet-me.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/account-activation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apis/api-account-activation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apis/api-signup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apis/log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apis/test-api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backgroundMeetMe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/bottom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/top.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/account-activation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/signup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logtest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,12 +255,12 @@
       <workItem from="1555681397032" duration="18639000" />
       <workItem from="1555708790053" duration="1372000" />
       <workItem from="1555747994633" duration="4437000" />
-      <workItem from="1555767817539" duration="345000" />
+      <workItem from="1555767817539" duration="714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82771000" />
+    <option name="totallyTimeSpent" value="83140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
