@@ -1,0 +1,88 @@
+body, html {
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    width: 100%;
+  }
+  
+  .bg-image {
+    background-image: url("backgroundMeetMe.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-signup {
+    background-color: #222222;
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+  }
+
+
+  .bg-text {
+    background-color: rgba(255,255,255, 0.1);
+    padding: 0 10px 40px 10px;
+    border: 1px solid #bf0116;
+    color: #ffffff;
+  }
+
+
+
+  a:hover > div {
+    opacity: 0.6;
+  }
+
+  .logo-container{
+      background-color: #673ab7;
+      color: white;
+      text-align: center;
+      padding: 0 10px 0 10px;
+
+  }
+
+
+.btn-primary {
+    background-color: #bf0116;
+    border: #bf0116;
+}
+
+  .btn-primary:hover {
+    background-color: #80010f !important;
+  }
+
+  .btn-outline-primary {
+    color: #bf0116;
+    border: 1px solid #bf0116;
+}
+
+.btn-outline-primary:hover {
+  background-color: #bf0116 !important;
+  border: 1px solid #bf0116 !important;
+}
+
+
+footer{
+  background-color: #343a40;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+}
+
+
+
+
+
