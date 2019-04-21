@@ -11,6 +11,9 @@
     <input type="submit" value="submit">
 </form>
 
+<br><h3 class="error" style="color: #bf0116;"></h3>
+
+
 
 <script src="jquery-3.3.1.min.js"></script>
 
@@ -27,6 +30,9 @@
             console.log('Done. ', jqXHR.responseJSON);
         }).fail(function ( jqXHR, textStatus, errorThrown) {
             console.log('Fail. ', jqXHR.responseJSON)
+
+            $('.error').text(jqXHR.responseJSON.error)
+
 
             //let obj = JSON.parse(jqXHR.responseJSON)
             //alert(jqXHR.responseJSON.error)

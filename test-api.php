@@ -5,6 +5,8 @@ file_put_contents('logtest.txt', "execute-00\n", FILE_APPEND);
 
 if (empty($_POST['userName'])) {
     http_response_code(400);
+    echo json_encode(array("error"=>"empty!!!", "hi"=>"ho"));
+
     exit;
 }
 
@@ -12,7 +14,7 @@ file_put_contents('logtest.txt', "execute-01\n", FILE_APPEND);
 
 if (!(strlen($_POST['userName']) >= 3 && strlen($_POST['userName']) <= 20)) {
     http_response_code(400);
-    echo json_encode(array("error"=>"error!", "hi"=>"ho"));
+    echo json_encode(array("error"=>"error! too short!!!", "hi"=>"ho"));
     exit;
 }
 
@@ -40,6 +42,6 @@ try {
 
 
 } catch (PDOException $e) {
-    echo json_encode(array("error"=>"error", "code"=> $e->getCode(), "message"=>$e->getMessage()));
+    echo json_encode(array("error"=>"error PDOException", "code"=> $e->getCode(), "message"=>$e->getMessage()));
     http_response_code(500);
 }
