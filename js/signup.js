@@ -47,8 +47,6 @@ $('#formSignup').submit(function (e) {
             console.log('fail callback called.');
             console.log('Fail. ', jqXHR.responseJSON);
             $('.errorEmail').text(jqXHR.responseJSON.error)
-            // $('.errorSignup').text(jqXHR.responseJSON.error)
-
         })
         .always(function (jData) {
             console.log('always callback called.');

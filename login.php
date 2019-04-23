@@ -1,48 +1,54 @@
 <?php
-$sTitle = 'Login';
+$sTitle = 'MeetMe Login';
 require_once './components/top.php';
 ?>
 
 
-<div class="container">
-    <div class="row justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-8 col-lg-6 mx-auto">
+    <div class="container">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto">
 
-            <form id="formLogin">
+                <form id="formLogin">
 
+                    <br>
+                    <h1>meet<i class="fas fa-heart" style="color: #bf0116;"></i>me</h1>
+
+                    <hr style="background-color: #bf0116;">
+
+                    <h2>Login:</h2>
+                    <p class="small" style="color: #bf0116;">* These fields are required</p>
+
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope" style="color: #bf0116;"></i> E-mail *</label>
+                        <input id="email" name="email" class="form-control" type="email" placeholder="E-mail"
+                               required value="">
+                        <span class="errorEmail" style="color: #bf0116;"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-unlock-alt" style="color: #bf0116;"></i> Password
+                            *</label>
+                        <input id="password" name="password" class="form-control" type="password"
+                               placeholder="Password"
+                               required="required" value="">
+                        <span class="errorPassword" style="color: #bf0116;"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"> LOGIN</button>
+
+                </form>
                 <br>
-                <h1>meet<i class="fas fa-heart" style="color: #bf0116;"></i>me</h1>
+                <p class="errorLogin" style="color: #bf0116;"></p>
+                <p class="successLogin" style="color: #bf0116;"></p>
 
-                <hr style="background-color: #bf0116;">
-                <h3>Congratulations! Your account has been activated. Now you can login!</h3><br>
 
-                <h2>Login:</h2>
-                <p class="small">* These fields are required</p>
-
-                <br><label for="userName"><i class="fas fa-user" style="color: #bf0116;"></i> User name *</label>
-                <input name="userName" class="form-control" type="text" placeholder="User Name"
-                       required="required" value="aaa">
-
-                <br><label for="password"><i class="fas fa-unlock-alt" style="color: #bf0116;"></i> Password *</label>
-                <input name="password" class="form-control" type="password" placeholder="Password"
-                       required="required" value="1234567"><br>
-
-                <button type="submit" class="btn btn-primary"> LOGIN</button>
-                <br>
-                <hr style="background-color: #bf0116;">
-                <p>Not a member?</p>
-                <a href="signup.php" class="btn btn-primary" role="button"> SIGN UP FOR
-                    FREE </a>
-
-            </form>
-
+            </div>
         </div>
     </div>
-</div>
-<br>
+    <br>
 
 
 <?php
-$sScript = '';
+$sScript = 'login.js';
 require_once './components/bottom.php';
 ?>
