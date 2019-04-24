@@ -17,12 +17,12 @@ $('#formLogin').submit(function (e) {
     }).done(function (data, textStatus, jqXHR) {
         console.log('done callback called.');
         console.log(data);
-        location.href = "home.php";
+        // location.href = "home.php";
     })
         .fail(function (jqXHR, textStatus, errorThrown) {
             console.log('fail callback called.');
-            console.log('Fail. ', jqXHR.responseJSON);
-            $('.errorLogin').text(jqXHR.responseJSON.error)
+            console.log('Fail. ', jqXHR, textStatus, errorThrown );
+            $('.errorLogin').text(jqXHR.responseText)
         })
 
         .always(function (jData) {

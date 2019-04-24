@@ -50,7 +50,7 @@ file_put_contents('log.txt', "2password-activationKey\n", FILE_APPEND);
             } else {
 
                 $sQuery = $db->prepare('INSERT INTO meetme_user (`userName`, `email`, `password`, `age`, `userGender`, `chooseGender`, 
-                  `profileImage`, `bio`, `activationKey`, `active`, `numberOfFailedAttempts`, `timeOfAcountLock`, `isAdmin`)
+                  `profileImage`, `bio`, `activationKey`, `active`, `numberOfFailedAttempts`, `timeOfAccountLock`, `isAdmin`)
                             VALUES (:sUserName, :sEmail, :sPassword, :iAge, :bUserGender, :bChooseGender, :profileImage, :sBio, 
                                     :sActivationKey, :bActive, :iNumberOfFailedAttempts, :timeOfAcountLock, :bIsAdmin)');
 

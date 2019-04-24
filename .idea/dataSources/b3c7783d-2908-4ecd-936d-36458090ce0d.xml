@@ -999,134 +999,106 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="254" parent="8" name="meetme_test"/>
-    <table id="255" parent="8" name="meetme_user"/>
-    <column id="256" parent="254" name="id">
+    <table id="254" parent="8" name="meetme_user"/>
+    <column id="255" parent="254" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="254" name="userName">
+    <column id="256" parent="254" name="userName">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="254" name="image">
-      <Position>3</Position>
-      <DataType>longblob|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="259" parent="254" name="id">
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="260" parent="254" name="id">
-      <ColNames>id</ColNames>
-      <UnderlyingIndexName>id</UnderlyingIndexName>
-    </key>
-    <column id="261" parent="255" name="id">
-      <Position>1</Position>
-      <DataType>bigint(20) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="262" parent="255" name="userName">
-      <Position>2</Position>
-      <DataType>varchar(50)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="263" parent="255" name="email">
+    <column id="257" parent="254" name="email">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="255" name="password">
+    <column id="258" parent="254" name="password">
       <Position>4</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="255" name="age">
+    <column id="259" parent="254" name="age">
       <Position>5</Position>
       <DataType>smallint(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="255" name="userGender">
+    <column id="260" parent="254" name="userGender">
       <Position>6</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="255" name="chooseGender">
+    <column id="261" parent="254" name="chooseGender">
       <Position>7</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="255" name="profileImage">
+    <column id="262" parent="254" name="profileImage">
       <Position>8</Position>
       <DataType>longblob|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="255" name="bio">
+    <column id="263" parent="254" name="bio">
       <Position>9</Position>
       <DataType>varchar(300)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="255" name="timeAdded">
+    <column id="264" parent="254" name="timeAdded">
       <Position>10</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="271" parent="255" name="activationKey">
+    <column id="265" parent="254" name="activationKey">
       <Position>11</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="255" name="active">
+    <column id="266" parent="254" name="active">
       <Position>12</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="255" name="numberOfFailedAttempts">
+    <column id="267" parent="254" name="numberOfFailedAttempts">
       <Position>13</Position>
       <DataType>tinyint(3)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="255" name="timeOfAcountLock">
+    <column id="268" parent="254" name="timeOfAccountLock">
       <Position>14</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="255" name="isAdmin">
+    <column id="269" parent="254" name="isAdmin">
       <Position>15</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="276" parent="255" name="id">
+    <index id="270" parent="254" name="id">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="277" parent="255" name="id">
+    <key id="271" parent="254" name="id">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id</UnderlyingIndexName>
     </key>
