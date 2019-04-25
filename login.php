@@ -21,7 +21,7 @@ require_once './components/top.php';
                     <div class="form-group">
                         <label for="email"><i class="fas fa-envelope" style="color: #bf0116;"></i> E-mail *</label>
                         <input id="email" name="email" class="form-control" type="email" placeholder="E-mail"
-                               required value="olyalo0201@gmail.com">
+                               required value="">
                         <span class="errorEmail" style="color: #bf0116;"></span>
                     </div>
 
@@ -38,8 +38,6 @@ require_once './components/top.php';
                 </form>
                 <br>
                 <p class="errorLogin" style="color: #bf0116;"></p>
-                <p class="successLogin" style="color: #bf0116;"></p>
-
 
             </div>
         </div>

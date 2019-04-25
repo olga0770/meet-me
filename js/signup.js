@@ -17,11 +17,11 @@ $('#formSignup').submit(function (e) {
         $('.errorPassword').text('Must be from 6 to 20 characters')
     }
 
-    if( sBio.length < 9 || sBio.length > 101 ){
-        $('.errorBio').text('Must be from 10 to 100 characters')
+    if( sBio.length < 9 || sBio.length > 275 ){
+        $('.errorBio').text('Must be from 10 to 275 characters')
     }
 
-    if( iAge < 17 || iAge > 101 ){
+    if( iAge < 17 || iAge > 100 ){
         $('.errorAge').text('Must be from 18 to 100')
     }
 
@@ -45,8 +45,7 @@ $('#formSignup').submit(function (e) {
     })
         .fail(function ( jqXHR, textStatus, errorThrown ) {
             console.log('fail callback called.');
-            console.log('Fail. ', jqXHR.responseJSON);
-            $('.errorEmail').text(jqXHR.responseJSON.error)
+            $('.errorEmail').text(jqXHR.responseText)
         })
         .always(function (jData) {
             console.log('always callback called.');

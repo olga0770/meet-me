@@ -77,7 +77,7 @@ require_once './components/top.php';
             <br>
             <div class="form-group">
                 <label for="bio"><i class="fas fa-file-alt" style="color: #bf0116;"></i> Bio *</label>
-                <textarea id="bio" name="bio" class="form-control" placeholder="Bio (10 to 100 characters)"
+                <textarea id="bio" name="bio" class="form-control" placeholder="Bio (10 to 275 characters)"
                           rows="3" required></textarea>
                 <span class="errorBio" style="color: #bf0116;"></span>
             </div>

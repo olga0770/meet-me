@@ -24,7 +24,7 @@
                     <div class="row justify-content-center align-items-center h-100">
                         <div class="col-12 col-md-12 mx-auto">
 
-                            <form action="">
+                            <form id="formLogin">
                                 <div class="container">
                                     <div class="row justify-content-center align-items-center h-100">
                                         <div class="col-12 col-md-10 mx-auto">
@@ -36,17 +36,27 @@
 
                                             <h5 style="margin: 15px 0 15px 0;">Meet new people! <br>Free and secure
                                                 dating :)</h5>
+                                            <p class="small" style="color: #bf0116;">* These fields are required</p>
 
-                                            <br><label for="userName"><i class="fas fa-user" style="color: #bf0116;"></i> User name *</label>
-                                            <input name="userName" class="form-control" type="text" placeholder="User Name"
-                                                   required="required" value="aaa">
+                                            <div class="form-group">
+                                                <label for="email"><i class="fas fa-envelope" style="color: #bf0116;"></i> E-mail *</label>
+                                                <input id="email" name="email" class="form-control" type="email" placeholder="E-mail"
+                                                       required value="">
+                                                <span class="errorEmail" style="color: #bf0116;"></span>
+                                            </div>
 
-                                            <br><label for="password"><i class="fas fa-unlock-alt" style="color: #bf0116;"></i> Password *</label>
-                                            <input name="password" class="form-control" type="password" placeholder="Password"
-                                                   required="required" value="1234567"><br>
+                                            <div class="form-group">
+                                                <label for="password"><i class="fas fa-unlock-alt" style="color: #bf0116;"></i> Password
+                                                    *</label>
+                                                <input id="password" name="password" class="form-control" type="password"
+                                                       placeholder="Password" required value="">
+                                                <span class="errorPassword" style="color: #bf0116;"></span>
+                                            </div>
 
                                             <button type="submit" class="btn btn-primary"> LOGIN</button>
                                             <br>
+                                            <p class="errorLogin" style="color: #bf0116;"></p>
+
                                             <hr style="background-color: #bf0116;">
                                             <p>Not a member?</p>
                                             <a href="signup.php" class="btn btn-primary" role="button"> SIGN UP FOR
@@ -68,17 +78,7 @@
 </div>
 
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+<?php
+$sScript = 'login.js';
+require_once './components/bottom.php';
+?>
