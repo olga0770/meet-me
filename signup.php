@@ -54,8 +54,8 @@ require_once './components/top.php';
                     </div>
 
                     <div class="form-group">
-                        <label for="userGender"><i class="fas fa-male" style="color: #bf0116;"></i><i
-                                    class="fas fa-female" style="color: #bf0116;"></i> Gender *</label>
+                        <label for="userGender"><i class="fas fa-male" style="color: #bf0116;"></i>
+                            <i class="fas fa-female" style="color: #bf0116;"></i> Gender *</label>
                         <select name="userGender" class="form-control">
                             <option value=1>Man</option>
                             <option value=0 selected>Woman</option>

@@ -17,7 +17,7 @@ $('#formLogin').submit(function (e) {
     }).done(function (data, textStatus, jqXHR) {
         console.log('done callback called.');
         console.log(data);
-        // location.href = "home.php";
+        location.href = "account.php";
     })
         .fail(function (jqXHR, textStatus, errorThrown) {
             console.log('fail callback called.');

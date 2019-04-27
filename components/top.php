@@ -17,7 +17,7 @@
 
 
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="home.php">meet<i class="fas fa-heart" style="color: #bf0116;"></i>me</a>
+        <a class="navbar-brand" href="index.php">meet<i class="fas fa-heart" style="color: #bf0116;"></i>me</a>
 
         <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false"
@@ -27,10 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent1">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.php">Home</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Your account</a>
+                    <a class="nav-link" href="account.php">Account</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="signup.php">Signup</a>
@@ -39,7 +39,7 @@
                     <a class="nav-link" href="login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Log out</a>
+                    <a class="nav-link" href="logout.php">Logout</a>
                 </li>
             </ul>
         </div>

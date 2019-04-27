@@ -33,11 +33,14 @@ try {
     $sQuery->bindValue(':sEmail', $sEmail);
     $sQuery->bindValue(':sPassword', $hashed_password);
     $sQuery->execute();
-    $sQuery->fetchAll();
+    $aUsers = $sQuery->fetchAll();
 
-    if ($sQuery->rowCount()) {
-        echo '{"status":"You are logged in"}';
+    if( count($aUsers) ){
+        session_start();
+        $_SESSION['user'] = $aUsers[0];
+        echo '{"status":1, "message":"login success"}';
         exit;
+
     }else{
     http_response_code(400);
     echo "Something went wrong. ";
@@ -60,7 +63,6 @@ try {
     }
 
 } catch (PDOException $e) {
-    file_put_contents('log.txt', "error: $e", FILE_APPEND);
-    echo '{"status":500, "message":"error", "code":"001", "line":' . __LINE__ . '}';
+    http_response_code(500);
 }
 

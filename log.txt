@@ -1,150 +1,33 @@
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-3success
-0image
-1image
-1image-path
-2execute
-4error
-0image
-1image
-1image-path
-2execute
-3success
+error: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'm.message' in 'field list' in C:\xampp\htdocs\meet-me\message.php:95
+Stack trace:
+#0 C:\xampp\htdocs\meet-me\message.php(95): PDOStatement->execute()
+#1 {main}error: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'm.message' in 'field list' in C:\xampp\htdocs\meet-me\message.php:95
+Stack trace:
+#0 C:\xampp\htdocs\meet-me\message.php(95): PDOStatement->execute()
+#1 {main}error: PDOException: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'u' in C:\xampp\htdocs\meet-me\message.php:89
+Stack trace:
+#0 C:\xampp\htdocs\meet-me\message.php(89): PDOStatement->execute()
+#1 {main}error: PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\meet-me\message.php:88
+Stack trace:
+#0 C:\xampp\htdocs\meet-me\message.php(88): PDOStatement->execute()
+#1 {main}error: PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\meet-me\message.php:88
+Stack trace:
+#0 C:\xampp\htdocs\meet-me\message.php(88): PDOStatement->execute()
+#1 {main}error: PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\meet-me\message.php:88
+Stack trace:
+#0 C:\xampp\htdocs\meet-me\message.php(88): PDOStatement->execute()
+#1 {main}error: PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM meetme_user AS u 
+        JOIN meetme_message AS m on m.friendId = u.id
+ ' at line 2 in C:\xampp\htdocs\meet-me\message.php:100
+Stack trace:
+#0 C:\xampp\htdocs\meet-me\message.php(100): PDOStatement->execute()
+#1 {main}error: PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\meet-me\message.php:85
+Stack trace:
+#0 C:\xampp\htdocs\meet-me\message.php(85): PDOStatement->execute()
+#1 {main}error: PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\xampp\htdocs\meet-me\message.php:85
+Stack trace:
+#0 C:\xampp\htdocs\meet-me\message.php(85): PDOStatement->execute()
+#1 {main}error: PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\meet-me\message.php:85
+Stack trace:
+#0 C:\xampp\htdocs\meet-me\message.php(85): PDOStatement->execute()
+#1 {main}
