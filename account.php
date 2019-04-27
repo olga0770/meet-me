@@ -4,7 +4,7 @@ $sTitle = 'MeetMe Account';
 require_once './components/top.php';
 
 if ($_SESSION['user']['isAdmin'] == 1) {
-    header('Location: index.php');
+    header('Location: admin.php');
     exit;
 }
 
