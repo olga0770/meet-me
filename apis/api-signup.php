@@ -26,7 +26,7 @@ if (empty($_POST['userName']) ||
 }
 
 $passwordRegister = $_POST['password'];
-$salt = 71;
+$salt = password_hash(uniqid(), PASSWORD_DEFAULT);
 $staticPeper = "dfdfswewegggfsdo034340fsfg3443213";
 $hashed_password = hash("sha256", $passwordRegister . "my_secret" . $salt . $staticPeper);
 
@@ -44,14 +44,15 @@ $sActivationKey = password_hash(uniqid(), PASSWORD_DEFAULT);
                 http_response_code(400);
                 echo "This email is already taken";
             } else {
-                $sQuery = $db->prepare('INSERT INTO meetme_user (`userName`, `email`, `password`, `age`, `userGender`, `chooseGender`, 
+                $sQuery = $db->prepare('INSERT INTO meetme_user (`userName`, `email`, `password`, `salt`, `age`, `userGender`, `chooseGender`, 
                   `profileImage`, `bio`, `activationKey`, `active`, `numberOfFailedAttempts`, `timeOfAccountLock`, `isAdmin`)
-                            VALUES (:sUserName, :sEmail, :sPassword, :iAge, :bUserGender, :bChooseGender, :profileImage, :sBio, 
+                            VALUES (:sUserName, :sEmail, :sPassword, :sSalt, :iAge, :bUserGender, :bChooseGender, :profileImage, :sBio, 
                                     :sActivationKey, :bActive, :iNumberOfFailedAttempts, :timeOfAcountLock, :bIsAdmin)');
 
                 $sQuery->bindValue(':sUserName', $_POST['userName']);
                 $sQuery->bindValue(':sEmail', $_POST['email']);
                 $sQuery->bindValue(':sPassword', $hashed_password);
+                $sQuery->bindValue(':sSalt', $salt);
                 $sQuery->bindValue(':iAge', $_POST['age']);
                 $sQuery->bindValue(':bUserGender', $_POST['userGender']);
                 $sQuery->bindValue(':bChooseGender', $_POST['chooseGender']);
@@ -69,7 +70,7 @@ $sActivationKey = password_hash(uniqid(), PASSWORD_DEFAULT);
                 if ($sQuery->rowCount()) {
                     echo '{"status":"Good job!"}';
 
-                    /*        $to = $_POST['email'];
+/*                            $to = $_POST['email'];
                             $subject = 'MeetMe Activation Key';
                             $message = 'Your Activation Key is: '.$sActivationKey;
                             $email = mail($to, $subject, $message);*/

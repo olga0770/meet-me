@@ -9,7 +9,7 @@ if($_SESSION['user']['id'] == $_GET['id']){
     exit;
 }
 
-if($_GET['id'] == 1){
+if($_GET['id'] == 3){
     header('Location: account.php');
     exit;
 }
@@ -45,7 +45,7 @@ try {
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img src="' . $user['profileImage'] . '" class="card-img" alt="MeetMe Profile Image">
+                        <img src="' . htmlentities($user['profileImage']) . '" class="card-img" alt="MeetMe Profile Image">
                     </div>
                     <div class="col-md-9">
                                 <h5 class="card-title">' . ($user['userGender'] == 1 ?
@@ -53,7 +53,7 @@ try {
                 "<i class='fas fa-female' style='color: #bf0116;'></i>") . ' ' . $user['userName'] . '</h5>
                                 <p class="card-text small">Age: ' . $user['age'] . '</p>                                
                                 <p class="card-text small" style="margin-top: -15px;">Looking for: ' . ($user['chooseGender'] == 1 ? "MAN" : "WOMEN") . '</p>
-                                <p class="card-text">' . $user['bio'] . '</p>                               
+                                <p class="card-text">' . htmlentities($user['bio']) . '</p>                               
                                 <p class="card-text small text-muted">Registered: ' . $user['timeAdded'] . '</p>
                     </div>
                 </div>

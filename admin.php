@@ -16,7 +16,7 @@ if (!$_SESSION['user']) {
             <div class="row">
                 <div class="col-12">
                 <div style="text-align: right;">
-                <p class="small text-muted" style="text-align: right; display: inline-block;">Welcome ' . $_SESSION['user']['userName'] . '! </p>
+                <p class="small text-muted" style="text-align: right; display: inline-block;">Welcome Admin ' . $_SESSION['user']['userName'] . '! </p>
                 <img src="' . $_SESSION['user']['profileImage'] . '" style="width: 30px; height: 30px; border-radius: 20px;" /></div>
                     <hr style="background-color: #505050; margin-top: 0;">
                 </div>
@@ -42,7 +42,7 @@ if (!$_SESSION['user']) {
                                     <div class="card text-white bg-dark mb-3">
                                         <div class="row no-gutters">
                                             <div class="col-sm-2">
-                                                <img src="'.$user['profileImage'].'" class="card-img" alt="MeetMe Profile Image">
+                                                <img src="'.htmlentities($user['profileImage']).'" class="card-img" alt="MeetMe Profile Image">
                                             </div>
                                             <div class="col-md-10">
                                                 <div class="card-body">
@@ -55,7 +55,8 @@ if (!$_SESSION['user']) {
                                                     <p class="card-text small" style="margin-top: -15px;">
                                                         Looking for: '.($user['chooseGender'] == 1 ? "MAN" : "WOMEN") . '</p>
                                                     <hr  style="background-color: #808080;">
-                                                    <p class="card-text">'.$user['bio'].'</p>                               
+                                                    <p class="card-text">'.htmlentities($user['bio']).'</p>
+                                                    <p class="card-text">User is activated: '.($user['active'] == 1 ? "YES" : "NO") . '</p>                               
                                                     <p class="card-text small text-muted">Registered: '.$user['timeAdded'].'</p>
                                                     <button type="button" class="btn btn-primary btnDelete">Delete</button>
                                                     <button type="button" class="btn btn-outline-primary">Edit</button>

@@ -36,6 +36,8 @@ if (!$_SESSION['user']) {
             $aUsers = $sQuery->fetchAll();
             foreach ($aUsers as $user) {
 
+                // ' . htmlentities($message['userName']) . '
+
                 if ($user['id'] == $_SESSION['user']['id']) {
 
                     echo '<div class="container">
@@ -44,19 +46,19 @@ if (!$_SESSION['user']) {
                                     <div class="card text-white bg-dark mb-3">
                                         <div class="row no-gutters">
                                             <div class="col-sm-2">
-                                                <img src="' . $user['profileImage'] . '" class="card-img" alt="MeetMe Profile Image">
+                                                <img src="'.htmlentities($user['profileImage']).'" class="card-img" alt="MeetMe Profile Image">
                                             </div>
                                             <div class="col-md-10">
                                                 <div class="card-body">
                                                     <h5 class="card-title">' . ($user['userGender'] == 1 ?
-                                                        "<i class='fas fa-male' style='color: #bf0116;'></i>" :
-                                                        "<i class='fas fa-female' style='color: #bf0116;'></i>") . ' ' . $user['userName'] . '\'s Account Details</h5>
+                            "<i class='fas fa-male' style='color: #bf0116;'></i>" :
+                            "<i class='fas fa-female' style='color: #bf0116;'></i>") . ' ' . htmlentities($user['userName']) . '\'s Account Details</h5>
                                                     <hr  style="background-color: #808080;">
-                                                    <p class="card-text small">Age: ' . $user['age'] . '</p>                                
-                                                    <p class="card-text small" style="margin-top: -15px;">E-mail: ' . $user['email'] . '</p> 
+                                                    <p class="card-text small">Age: ' . htmlentities($user['age']) . '</p>                                
+                                                    <p class="card-text small" style="margin-top: -15px;">E-mail: ' . htmlentities($user['email']) . '</p> 
                                                     <p class="card-text small" style="margin-top: -15px;">Looking for: ' . ($user['chooseGender'] == 1 ? "MAN" : "WOMEN") . '</p>
                                                     <hr  style="background-color: #808080;">
-                                                    <p class="card-text">' . $user['bio'] . '</p>                               
+                                                    <p class="card-text">' . htmlentities($user['bio']) . '</p>                               
                                                     <p class="card-text small text-muted">Registered: ' . $user['timeAdded'] . '</p>
                                                 </div>
                                             </div>
@@ -74,12 +76,12 @@ if (!$_SESSION['user']) {
 
                     echo '<div class="col-sm-6 col-md-4 col-lg-3">
                             <div class="card text-white bg-dark mb-3" id="' . $user['id'] . '">                
-                                <a href="message.php?id='.$user['id'].'">
-                                    <img src="' . $user['profileImage'] . '" class="card-img-top" alt="MeetMe Profile Image"></a>
+                                <a href="message.php?id=' . $user['id'] . '">
+                                    <img src="' . htmlentities($user['profileImage']) . '" class="card-img-top" alt="MeetMe Profile Image"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">' . ($user['userGender'] == 1 ?
-                                        "<i class='fas fa-male' style='color: #bf0116;'></i>" :
-                                        "<i class='fas fa-female' style='color: #bf0116;'></i>") . ' ' . $user['userName'] . '</h5>
+                            "<i class='fas fa-male' style='color: #bf0116;'></i>" :
+                            "<i class='fas fa-female' style='color: #bf0116;'></i>") . ' ' . $user['userName'] . '</h5>
                                     <p class="card-text small">Looking for: ' . ($user['chooseGender'] == 1 ? "MAN" : "WOMEN") . '</p>
                                     <p class="card-text small text-muted" style="margin-top: -15px;">Registered: ' . $user['timeAdded'] . '</p>
                                 </div>

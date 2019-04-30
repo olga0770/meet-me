@@ -1,4 +1,5 @@
 <?php
+session_start();
 $sTitle = 'MeetMe Signup';
 require_once './components/top.php';
 ?>
@@ -83,6 +84,7 @@ require_once './components/top.php';
             </div>
 
             <hr style="background-color: #bf0116;">
+
             <br><input type="submit" class="btn btn-primary btn-lg" value="   SIGN UP   ">
         </form>
     </div>
