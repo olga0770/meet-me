@@ -70,10 +70,10 @@ $sActivationKey = password_hash(uniqid(), PASSWORD_DEFAULT);
                 if ($sQuery->rowCount()) {
                     echo '{"status":"Good job!"}';
 
-/*                            $to = $_POST['email'];
+                            $to = $_POST['email'];
                             $subject = 'MeetMe Activation Key';
                             $message = 'Your Activation Key is: '.$sActivationKey;
-                            $email = mail($to, $subject, $message);*/
+                            $email = mail($to, $subject, $message);
 
                     exit;
                 }
