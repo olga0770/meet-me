@@ -2,6 +2,7 @@
 session_start();
 $sTitle = 'MeetMe Signup';
 require_once './components/top.php';
+$_SESSION["csrf_token"]=hash("sha256",rand()."secret");
 ?>
 
     <div class="container">
@@ -9,17 +10,22 @@ require_once './components/top.php';
         <br>
         <h1>meet<i class="fas fa-heart" style="color: #bf0116;"></i>me</h1>
         <hr style="background-color: #bf0116;">
-        <h2>Make a profile:</h2>
+        <h2 class="waitingMessage">Make a profile:</h2>
         <p class="small" style="color: #bf0116;">* These fields are required</p>
+
+        <div id="wait" style="display:none;width:200px;height:200px;position:absolute;top:50%;left:50%;padding:2px;margin-left: -100px;z-index:1">
+            <img src='demo_wait.gif' width="200" height="200" /></div>
 
         <form id="formSignup">
             <div class="row">
                 <div class="col-12 col-md-6">
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?>">
 
                     <div class="form-group">
                         <label for="userName"><i class="fas fa-user" style="color: #bf0116;"></i> User Name *</label>
                         <input id="userName" name="userName" class="form-control" type="text"
-                               placeholder="User Name (3 to 20 characters)" required value="">
+                               placeholder="User Name (3 to 20 characters)" required
+                               value="<?php if (!empty($_POST['userName'])) {echo htmlentities($_POST['userName']);} ?>">
                         <span class="errorUserName" style="color: #bf0116;"></span>
                     </div>
 
@@ -33,7 +39,9 @@ require_once './components/top.php';
                     <div class="form-group">
                         <label for="password"><i class="fas fa-unlock-alt" style="color: #bf0116;"></i> Create Password *</label>
                         <input id="password" name="password" class="form-control" type="password"
-                               placeholder="Create Password (6 to 15 characters)" required value="">
+                               placeholder="Create Password (8 to 20 characters)" required value=""
+                               pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$"
+                               title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number.">
                         <span class="errorPassword" style="color: #bf0116;"></span>
                     </div>
 
@@ -87,6 +95,10 @@ require_once './components/top.php';
 
             <br><input type="submit" class="btn btn-primary btn-lg" value="   SIGN UP   ">
         </form>
+
+
+
+
     </div>
     <br>
 

@@ -1,6 +1,8 @@
 <?php
+session_start();
 $sTitle = 'MeetMe Login';
 require_once './components/top.php';
+$_SESSION["csrf_token"]=hash("sha256",rand()."secret");
 ?>
 
 
@@ -9,6 +11,7 @@ require_once './components/top.php';
             <div class="col-12 col-md-8 col-lg-6 mx-auto">
 
                 <form id="formLogin">
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?>">
 
                     <br>
                     <h1>meet<i class="fas fa-heart" style="color: #bf0116;"></i>me</h1>

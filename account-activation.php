@@ -1,4 +1,5 @@
 <?php
+session_start();
 $sTitle = 'MeetMe Account Activation';
 require_once './components/top.php';
 ?>
@@ -8,6 +9,7 @@ require_once './components/top.php';
         <div class="col-12 col-md-8 col-lg-6 mx-auto">
 
             <form id="formProfileImage" action="account-activation.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 
                 <br>
                 <h1>meet<i class="fas fa-heart" style="color: #bf0116;"></i>me</h1>
@@ -60,7 +62,6 @@ require_once './components/top.php';
 
 
 <?php
-
 $errorMessage = '<div class="container">
                         <div class="row justify-content-center align-items-center h-100">
                             <div class="col-12 col-md-8 col-lg-6 mx-auto">
@@ -82,7 +83,11 @@ $successMessage = '<div class="container">
 
 if (empty($_POST['key']) || (strlen($_POST['key'])) !== 60) {
     http_response_code(400);
-    // echo $errorMessage . 'key';
+    exit;
+}
+
+if (!isset($_POST['csrf_token']) || $_SESSION["csrf_token"] != $_POST["csrf_token"]) {
+    echo "Security Error";
     exit;
 }
 
@@ -124,6 +129,8 @@ if (isset($_FILES['file']['tmp_name'])) {
     finfo_close($finfo);
     echo $errorMessage . 'not an image';
 }
+
+$_SESSION["csrf_token"] = hash("sha256",rand()."secret");
 
 
 

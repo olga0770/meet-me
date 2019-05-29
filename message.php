@@ -22,7 +22,8 @@ if (!$_SESSION['user']) {
             <div class="row">
                 <div class="col-12">
                 <div style="text-align: right;">
-                <p class="small text-muted" style="text-align: right; display: inline-block;">Welcome ' . $_SESSION['user']['userName'] . '! </p>
+                <a href="account.php">
+                <p class="small text-muted" style="text-align: right; display: inline-block;">Welcome ' . $_SESSION['user']['userName'] . '! </p></a>
                 <img src="' . $_SESSION['user']['profileImage'] . '" style="width: 30px; height: 30px; border-radius: 20px;" /></div>
                     <hr style="background-color: #505050; margin-top: 0;">
                 </div>

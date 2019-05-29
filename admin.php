@@ -36,7 +36,6 @@ if (!$_SESSION['user']) {
                 $aUsers = $sQuery->fetchAll();
 
                 foreach ($aUsers as $user) {
-                    if ($user['id'] != $_SESSION['user']['id']) {
 
                         echo '<div id="'.$user['id'].'" class="col-sm-12 userObject">
                                     <div class="card text-white bg-dark mb-3">
@@ -57,15 +56,16 @@ if (!$_SESSION['user']) {
                                                     <hr  style="background-color: #808080;">
                                                     <p class="card-text">'.htmlentities($user['bio']).'</p>
                                                     <p class="card-text">User is activated: '.($user['active'] == 1 ? "YES" : "NO") . '</p>                               
-                                                    <p class="card-text small text-muted">Registered: '.$user['timeAdded'].'</p>
-                                                    <button type="button" class="btn btn-primary btnDelete">Delete</button>
-                                                    <button type="button" class="btn btn-outline-primary">Edit</button>
+                                                    <p class="card-text small text-muted">Registered: '.$user['timeAdded'].'</p>                                                                                                        
+                                                    <div>' . ($user['active'] == 1 ?
+                                "<button  type='button' class='btn btn-primary btnDeactivate'>Deactivate</button>" :
+                                "<button  type='button' class='btn btn-primary btnActivate'>Activate</button>").'                                                   
+                                                    </div>
                                                 </div>                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>';
-                    }
                 }
 
             } catch (PDOException $e) {

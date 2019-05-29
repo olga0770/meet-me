@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_POST['csrf_token']) || $_SESSION['csrf_token'] != $_POST['csrf_token']) {
+    echo '{"status":"Security Error"}';
+    exit();
+}
 if (
     empty($_POST['email']) ||
     empty($_POST['password']) ||
@@ -47,7 +52,7 @@ try {
     $aUsers = $sQuery->fetchAll();
 
     if (count($aUsers)) {
-        session_start();
+        //session_start();
         $_SESSION['user'] = $aUsers[0];
         echo '{"status":1, "message":"login success"}';
         exit;

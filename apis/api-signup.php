@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_POST['csrf_token']) || $_SESSION['csrf_token'] != $_POST['csrf_token']) {
+    echo '{"status":"Security Error"}';
+    exit();
+}
+
 if (empty($_POST['userName']) ||
     empty($_POST['email']) ||
     empty($_POST['password']) ||
@@ -16,10 +22,12 @@ if (empty($_POST['userName']) ||
 
     !(strlen($_POST['userName']) >= 3 && strlen($_POST['userName']) <= 20) ||
     !(strlen($_POST['bio']) >= 10 && strlen($_POST['bio']) <= 275) ||
-    !(strlen($_POST['password']) >= 6 && strlen($_POST['password']) <= 20) ||
+    !(strlen($_POST['password']) >= 8 && strlen($_POST['password']) <= 20) ||
     !($_POST['age'] >= 18 && $_POST['age'] <= 100) ||
 
-    !($_POST['password'] == $_POST['confirmPassword'])) {
+    !(preg_match('/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[A-Z]).{8,20}$/', $_POST['password'])) ||
+
+    !($_POST['password'] === $_POST['confirmPassword'])) {
     http_response_code(400);
     echo "";
     exit;
@@ -70,10 +78,10 @@ $sActivationKey = password_hash(uniqid(), PASSWORD_DEFAULT);
                 if ($sQuery->rowCount()) {
                     echo '{"status":"Good job!"}';
 
-                            $to = $_POST['email'];
+/*                            $to = $_POST['email'];
                             $subject = 'MeetMe Activation Key';
                             $message = 'Your Activation Key is: '.$sActivationKey;
-                            $email = mail($to, $subject, $message);
+                            $email = mail($to, $subject, $message);*/
 
                     exit;
                 }

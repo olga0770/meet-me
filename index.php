@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION["csrf_token"]=hash("sha256",rand()."secret");
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -13,7 +18,7 @@
     <title>MeetMe – free and secure dating</title>
 </head>
 
-<body>
+<body class="bg-signup">
 <div class="bg-image">
 
     <div class="container">
@@ -25,6 +30,7 @@
                         <div class="col-12 col-md-12 mx-auto">
 
                             <form id="formLogin">
+                                <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token'] ?>">
                                 <div class="container">
                                     <div class="row justify-content-center align-items-center h-100">
                                         <div class="col-12 col-md-10 mx-auto">
@@ -67,11 +73,15 @@
                                 </div>
                             </form>
 
+                            <br>
+                            <p class="errorLogin" style="color: #bf0116;"></p>
+
                         </div>
                     </div>
                 </div>
 
             </div>
+
         </div>
     </div>
 </div>

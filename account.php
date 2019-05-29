@@ -31,7 +31,7 @@ if (!$_SESSION['user']) {
         <?php
         require_once 'database.php';
         try {
-            $sQuery = $db->prepare('SELECT * FROM meetme_user WHERE isAdmin = 0 ORDER BY timeAdded desc');
+            $sQuery = $db->prepare('SELECT * FROM meetme_user WHERE isAdmin = 0 AND active = 1 ORDER BY timeAdded desc');
             $sQuery->execute();
             $aUsers = $sQuery->fetchAll();
             foreach ($aUsers as $user) {
