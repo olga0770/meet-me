@@ -8,6 +8,8 @@ $('#formMessage').submit(function (e) {
         $('.errorMessage').text('Must be from 3 to 300 characters')
     }
 
+    const toUserId = $('#toUserId').val();
+
 
     $.ajax({
         url: "apis/api-message.php",
@@ -18,6 +20,7 @@ $('#formMessage').submit(function (e) {
     }).done(function (jData) {
         console.log('done callback called.');
         console.log(jData);
+        location.href = "message.php?id=" + toUserId;
     })
         .fail(function (jData) {
             console.log('fail callback called.');

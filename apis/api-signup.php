@@ -25,7 +25,7 @@ if (empty($_POST['userName']) ||
     !(strlen($_POST['password']) >= 8 && strlen($_POST['password']) <= 20) ||
     !($_POST['age'] >= 18 && $_POST['age'] <= 100) ||
 
-    !(preg_match('/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[A-Z]).{8,20}$/', $_POST['password'])) ||
+    !(preg_match('/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{8,20}$/', $_POST['password'])) ||
 
     !($_POST['password'] === $_POST['confirmPassword'])) {
     http_response_code(400);
@@ -82,6 +82,12 @@ $sActivationKey = password_hash(uniqid(), PASSWORD_DEFAULT);
                             $subject = 'MeetMe Activation Key';
                             $message = 'Your Activation Key is: '.$sActivationKey;
                             $email = mail($to, $subject, $message);*/
+
+
+//  todo   https://forums.phpfreaks.com/topic/136585-solved-mail-command-takes-a-long-time-to-finish/
+                    // we can always issue an 'at' command to run this mail command
+
+
 
                     exit;
                 }

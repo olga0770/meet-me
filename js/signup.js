@@ -19,7 +19,7 @@ $(document).ready(function () {
         let iAge = $('#age').val();
 
         if (sUserName.length <= 3 || sUserName.length >= 20) {
-            $('.errorUserName').text('Must be from 3 to 20 characters')
+            $('.errorUserName').text('Must be from 4 to 20 characters')
         }
 
         if (sPassword.length <= 8 || sPassword.length >= 20) {
